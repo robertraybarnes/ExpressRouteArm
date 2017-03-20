@@ -22,7 +22,7 @@ $rglocation = "North Europe"
 
 # Create VNet that will be connected to the ExpressRoute Circuit
 $vNetName = "ExpressRouteVNet"
-# This subnet mist be called 'GatewatSubnet' -- it is identified as such for use by the Gateway connection to ExpressRoute
+# This subnet mist be called 'GatewaySubnet' -- it is identified as such for use by the Gateway connection to ExpressRoute
 $subnet1 = New-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.0.0/28
 $subnet2 = New-AzureRmVirtualNetworkSubnetConfig -Name 'Subnet1' -AddressPrefix '10.0.1.0/20'
 New-AzureRmVirtualNetwork -Name $vNetName -ResourceGroupName $rg -Location $rglocation -AddressPrefix 10.0.0.0/16 -Subnet $subnet1, $subnet2
